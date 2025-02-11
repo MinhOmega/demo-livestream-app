@@ -12,6 +12,7 @@
 		29C2AFB18ABF0F1644F63A9D /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		F785D97B2D5B4695003FD7D6 /* RoomEngine in Frameworks */ = {isa = PBXBuildFile; productRef = F785D97A2D5B4695003FD7D6 /* RoomEngine */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C80B921A6F3F58F76C31292 /* libPods-demoLivestreamApp.a in Frameworks */,
+				F785D97B2D5B4695003FD7D6 /* RoomEngine in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +146,9 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
+			packageReferences = (
+				F785D9792D5B4695003FD7D6 /* XCRemoteSwiftPackageReference "RTCRoomEngine_SwiftPM" */,
+			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -481,6 +486,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F785D9792D5B4695003FD7D6 /* XCRemoteSwiftPackageReference "RTCRoomEngine_SwiftPM" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Tencent-RTC/RTCRoomEngine_SwiftPM.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F785D97A2D5B4695003FD7D6 /* RoomEngine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F785D9792D5B4695003FD7D6 /* XCRemoteSwiftPackageReference "RTCRoomEngine_SwiftPM" */;
+			productName = RoomEngine;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
 }
