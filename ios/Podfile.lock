@@ -1,6 +1,7 @@
 PODS:
   - boost (1.84.0)
   - DoubleConversion (1.1.6)
+  - ESPullToRefresh (2.9.3)
   - fast_float (6.1.4)
   - FBLazyVector (0.77.0)
   - fmt (11.0.2)
@@ -8,6 +9,13 @@ PODS:
   - hermes-engine (0.77.0):
     - hermes-engine/Pre-built (= 0.77.0)
   - hermes-engine/Pre-built (0.77.0)
+  - Kingfisher (6.3.1)
+  - LiveStreamCore/Professional (2.8.0):
+    - RTCCommon (>= 1.1.0)
+    - RTCRoomEngine/Professional
+    - SnapKit
+    - TUICore
+  - Protobuf (3.22.5)
   - RCT-Folly (2024.11.18.00):
     - boost
     - DoubleConversion
@@ -1499,7 +1507,64 @@ PODS:
     - React-logger (= 0.77.0)
     - React-perflogger (= 0.77.0)
     - React-utils (= 0.77.0)
+  - RTCCommon (1.1.0):
+    - SnapKit
+  - RTCRoomEngine/Professional (2.9.0):
+    - TXIMSDK_Plus_iOS_XCFramework (>= 8.1.6116)
+    - TXLiteAVSDK_Professional (>= 12.2.16956)
+  - SDWebImage (5.20.0):
+    - SDWebImage/Core (= 5.20.0)
+  - SDWebImage/Core (5.20.0)
+  - SeatGridView/Professional (2.4.3):
+    - Kingfisher (<= 6.3.1)
+    - RTCCommon (>= 1.1.0)
+    - RTCRoomEngine/Professional
+    - SnapKit
+    - TUICore
+  - SnapKit (5.7.1)
   - SocketRocket (0.7.1)
+  - SSZipArchive (2.4.3)
+  - SVGAPlayer (2.5.7):
+    - SVGAPlayer/Core (= 2.5.7)
+    - SVGAPlayer/ProtoFiles (= 2.5.7)
+  - SVGAPlayer/Core (2.5.7):
+    - SSZipArchive (>= 1.8.1)
+    - SVGAPlayer/ProtoFiles
+  - SVGAPlayer/ProtoFiles (2.5.7):
+    - Protobuf (~> 3.4)
+  - TUICore (8.4.6667):
+    - SDWebImage
+    - TUICore/ImSDK_Plus (= 8.4.6667)
+  - TUICore/Base (8.4.6667):
+    - SDWebImage
+  - TUICore/ImSDK_Plus (8.4.6667):
+    - SDWebImage
+    - TUICore/Base
+    - TXIMSDK_Plus_iOS_XCFramework
+  - TUILiveKit (2.8.0):
+    - ESPullToRefresh
+    - Kingfisher (<= 6.3.1)
+    - Protobuf (~> 3.22.1)
+    - RTCCommon (>= 1.0.2)
+    - SnapKit
+    - SVGAPlayer (~> 2.5.7)
+    - TUICore
+    - TUILiveKit/Professional (= 2.8.0)
+  - TUILiveKit/Professional (2.8.0):
+    - ESPullToRefresh
+    - Kingfisher (<= 6.3.1)
+    - LiveStreamCore/Professional
+    - Protobuf (~> 3.22.1)
+    - RTCCommon (>= 1.0.2)
+    - RTCRoomEngine/Professional (>= 2.5.1)
+    - SeatGridView/Professional
+    - SnapKit
+    - SVGAPlayer (~> 2.5.7)
+    - TUICore
+  - TXIMSDK_Plus_iOS_XCFramework (8.4.6675)
+  - TXLiteAVSDK_Professional (12.3.16995):
+    - TXLiteAVSDK_Professional/Professional (= 12.3.16995)
+  - TXLiteAVSDK_Professional/Professional (12.3.16995)
   - Yoga (0.0.0)
 
 DEPENDENCIES:
@@ -1510,6 +1575,7 @@ DEPENDENCIES:
   - fmt (from `../node_modules/react-native/third-party-podspecs/fmt.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
+  - Protobuf
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCT-Folly/Fabric (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCTDeprecation (from `../node_modules/react-native/ReactApple/Libraries/RCTFoundation/RCTDeprecation`)
@@ -1570,11 +1636,28 @@ DEPENDENCIES:
   - ReactAppDependencyProvider (from `build/generated/ios`)
   - ReactCodegen (from `build/generated/ios`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - SVGAPlayer
+  - TUILiveKit
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   trunk:
+    - ESPullToRefresh
+    - Kingfisher
+    - LiveStreamCore
+    - Protobuf
+    - RTCCommon
+    - RTCRoomEngine
+    - SDWebImage
+    - SeatGridView
+    - SnapKit
     - SocketRocket
+    - SSZipArchive
+    - SVGAPlayer
+    - TUICore
+    - TUILiveKit
+    - TXIMSDK_Plus_iOS_XCFramework
+    - TXLiteAVSDK_Professional
 
 EXTERNAL SOURCES:
   boost:
@@ -1714,11 +1797,15 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   boost: 7e761d76ca2ce687f7cc98e698152abd03a18f90
   DoubleConversion: cb417026b2400c8f53ae97020b2be961b59470cb
+  ESPullToRefresh: 0d68daa602b343c81753a1b95e09fd0bfcddfd40
   fast_float: 06eeec4fe712a76acc9376682e4808b05ce978b6
   FBLazyVector: 2bc03a5cf64e29c611bbc5d7eb9d9f7431f37ee6
   fmt: a40bb5bd0294ea969aaaba240a927bd33d878cdd
   glog: eb93e2f488219332457c3c4eafd2738ddc7e80b8
   hermes-engine: 1f783c3d53940aed0d2c84586f0b7a85ab7827ef
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
+  LiveStreamCore: 46f2e9bb99bc1996f8595dbb0d5166c1a4655623
+  Protobuf: bcec8c9430002f8d11c8a08f964b3ebcdd060536
   RCT-Folly: 36fe2295e44b10d831836cc0d1daec5f8abcf809
   RCTDeprecation: f5c19ebdb8804b53ed029123eb69914356192fc8
   RCTRequired: 6ae6cebe470486e0e0ce89c1c0eabb998e7c51f4
@@ -1777,9 +1864,20 @@ SPEC CHECKSUMS:
   ReactAppDependencyProvider: 3d947e9d62f351c06c71497e1be897e6006dc303
   ReactCodegen: 1baa534318b19e95fb0f02db0a1ae1e3c271944d
   ReactCommon: 6014af4276bb2debc350e2620ef1bd856b4d981c
+  RTCCommon: cfd30f124519be2473f8b08d7d77dd1cde778a80
+  RTCRoomEngine: 8bb1974efbb15fcad63042db42fba35a1683f446
+  SDWebImage: 73c6079366fea25fa4bb9640d5fb58f0893facd8
+  SeatGridView: 2265c08986e86eba270855bd527ba9fac92c3801
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
+  SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
+  SVGAPlayer: 318b85a78b61292d6ae9dfcd651f3f0d1cdadd86
+  TUICore: 798f1db24c5e3ada1db90431904a3f63ff612061
+  TUILiveKit: b3809702018b83787c48a33a080811d324f45bea
+  TXIMSDK_Plus_iOS_XCFramework: ce4435718ef7d893ed5c0c9cb7ddb81253db9f4c
+  TXLiteAVSDK_Professional: 6e8fa18eeb0e52e6bbbcd97bab9ec9fbdc828df3
   Yoga: 78d74e245ed67bb94275a1316cdc170b9b7fe884
 
-PODFILE CHECKSUM: bc3725dfb3fba2d324bc73907752c1e5f9ed7e5b
+PODFILE CHECKSUM: 8b5ef2d1b0b311d3ca6569578b67b34749fef803
 
 COCOAPODS: 1.16.2

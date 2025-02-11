@@ -14,8 +14,14 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
+use_modular_headers!
+
 target 'demoLivestreamApp' do
   config = use_native_modules!
+
+  pod 'TUILiveKit'
+  pod 'SVGAPlayer'
+  pod 'Protobuf'
 
   use_react_native!(
     :path => config[:reactNativePath],

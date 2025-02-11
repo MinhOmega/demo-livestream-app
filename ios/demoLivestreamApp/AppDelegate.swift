@@ -2,6 +2,7 @@ import UIKit
 import React
 import React_RCTAppDelegate
 import ReactAppDependencyProvider
+import TUICore
 
 @main
 class AppDelegate: RCTAppDelegate {
@@ -12,6 +13,15 @@ class AppDelegate: RCTAppDelegate {
     // You can add your custom initial props in the dictionary below.
     // They will be passed down to the ViewController used by React Native.
     self.initialProps = [:]
+
+    // Initialize TUILogin
+    TUILogin.login(20018723,                // Replace it with the SDKAppID obtained in Step 1
+            userID: "denny",                 // Replace with your UserID
+            userSig: "xxxxxxxxxxx") {        // Calculate a UserSig in the console and enter it here
+      print("login success")
+    } fail: { (code, message) in
+      print("login failed, code: \(code), error: \(message ?? "nil")")
+    }
 
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
