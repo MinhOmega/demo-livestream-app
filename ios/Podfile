@@ -16,7 +16,11 @@ end
 
 target 'demoLivestreamApp' do
   config = use_native_modules!
+
+  # Add Tencent Cloud dependencies
   pod 'RTCRoomEngine'
+  
+  # React Native dependencies
   use_react_native!(
     :path => config[:reactNativePath],
     # An absolute path to your application root.

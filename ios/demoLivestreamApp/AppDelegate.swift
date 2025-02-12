@@ -3,6 +3,9 @@ import React
 import React_RCTAppDelegate
 import ReactAppDependencyProvider
 
+// Import custom modules
+import RTCRoomEngine
+
 @main
 class AppDelegate: RCTAppDelegate {
   override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
@@ -22,9 +25,31 @@ class AppDelegate: RCTAppDelegate {
 
   override func bundleURL() -> URL? {
 #if DEBUG
-    RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index")
+    return RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index")
 #else
-    Bundle.main.url(forResource: "main", withExtension: "jsbundle")
+    return Bundle.main.url(forResource: "main", withExtension: "jsbundle")
 #endif
+  }
+
+  func showMainViewController() {
+    DispatchQueue.main.async {
+      if let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) {
+        let mainVC = UIViewController() // Temporary placeholder
+        let rootVC = UINavigationController(rootViewController: mainVC)
+        keyWindow.rootViewController = rootVC
+        keyWindow.makeKeyAndVisible()
+      }
+    }
+  }
+  
+  func showLoginViewController() {
+    DispatchQueue.main.async {
+      if let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) {
+        let loginVC = UIViewController() // Temporary placeholder
+        let nav = UINavigationController(rootViewController: loginVC)
+        keyWindow.rootViewController = nav
+        keyWindow.makeKeyAndVisible()
+      }
+    }
   }
 }
