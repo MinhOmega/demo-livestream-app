@@ -1,0 +1,133 @@
+PODS:
+  - Alamofire (5.10.2)
+  - ESPullToRefresh (2.9.3)
+  - Kingfisher (6.3.1)
+  - LiveStreamCore (0.1.0):
+    - LiveStreamCore/Professional (= 0.1.0)
+    - RTCCommon (>= 1.1.0)
+    - SnapKit
+    - TUICore
+  - LiveStreamCore/Professional (0.1.0):
+    - RTCCommon (>= 1.1.0)
+    - RTCRoomEngine/Professional
+    - SnapKit
+    - TUICore
+  - Protobuf (3.22.5)
+  - RTCCommon (1.1.0):
+    - SnapKit
+  - RTCRoomEngine/Professional (2.9.0):
+    - TXIMSDK_Plus_iOS_XCFramework (>= 8.1.6116)
+    - TXLiteAVSDK_Professional (>= 12.2.16956)
+  - SDWebImage (5.20.0):
+    - SDWebImage/Core (= 5.20.0)
+  - SDWebImage/Core (5.20.0)
+  - SeatGridView (0.1.0):
+    - Kingfisher (<= 6.3.1)
+    - RTCCommon (>= 1.1.0)
+    - SeatGridView/Professional (= 0.1.0)
+    - SnapKit
+    - TUICore
+  - SeatGridView/Professional (0.1.0):
+    - Kingfisher (<= 6.3.1)
+    - RTCCommon (>= 1.1.0)
+    - RTCRoomEngine/Professional
+    - SnapKit
+    - TUICore
+  - SnapKit (5.7.1)
+  - SSZipArchive (2.4.3)
+  - SVGAPlayer (2.5.7):
+    - SVGAPlayer/Core (= 2.5.7)
+    - SVGAPlayer/ProtoFiles (= 2.5.7)
+  - SVGAPlayer/Core (2.5.7):
+    - SSZipArchive (>= 1.8.1)
+    - SVGAPlayer/ProtoFiles
+  - SVGAPlayer/ProtoFiles (2.5.7):
+    - Protobuf (~> 3.4)
+  - TUICore (8.4.6667):
+    - SDWebImage
+    - TUICore/ImSDK_Plus (= 8.4.6667)
+  - TUICore/Base (8.4.6667):
+    - SDWebImage
+  - TUICore/ImSDK_Plus (8.4.6667):
+    - SDWebImage
+    - TUICore/Base
+    - TXIMSDK_Plus_iOS_XCFramework
+  - TUILiveKit (1.0.0):
+    - ESPullToRefresh
+    - Kingfisher (<= 6.3.1)
+    - Protobuf (~> 3.22.1)
+    - RTCCommon (>= 1.0.0)
+    - SnapKit
+    - SVGAPlayer (~> 2.5.7)
+    - TUICore
+    - TUILiveKit/Professional (= 1.0.0)
+  - TUILiveKit/Professional (1.0.0):
+    - ESPullToRefresh
+    - Kingfisher (<= 6.3.1)
+    - LiveStreamCore/Professional
+    - Protobuf (~> 3.22.1)
+    - RTCCommon (>= 1.0.0)
+    - RTCRoomEngine/Professional (>= 2.9.0)
+    - SeatGridView/Professional
+    - SnapKit
+    - SVGAPlayer (~> 2.5.7)
+    - TUICore
+  - TXIMSDK_Plus_iOS_XCFramework (8.4.6675)
+  - TXLiteAVSDK_Professional (12.3.16995):
+    - TXLiteAVSDK_Professional/Professional (= 12.3.16995)
+  - TXLiteAVSDK_Professional/Professional (12.3.16995)
+
+DEPENDENCIES:
+  - Alamofire
+  - Kingfisher
+  - LiveStreamCore (from `../LiveStreamCore/LiveStreamCore.podspec`)
+  - RTCCommon (>= 1.0.2)
+  - SeatGridView (from `../SeatGridView/SeatGridView.podspec`)
+  - SnapKit
+  - TUILiveKit (from `../TUILiveKit`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - ESPullToRefresh
+    - Kingfisher
+    - Protobuf
+    - RTCCommon
+    - RTCRoomEngine
+    - SDWebImage
+    - SnapKit
+    - SSZipArchive
+    - SVGAPlayer
+    - TUICore
+    - TXIMSDK_Plus_iOS_XCFramework
+    - TXLiteAVSDK_Professional
+
+EXTERNAL SOURCES:
+  LiveStreamCore:
+    :path: "../LiveStreamCore/LiveStreamCore.podspec"
+  SeatGridView:
+    :path: "../SeatGridView/SeatGridView.podspec"
+  TUILiveKit:
+    :path: "../TUILiveKit"
+
+SPEC CHECKSUMS:
+  Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
+  ESPullToRefresh: 0d68daa602b343c81753a1b95e09fd0bfcddfd40
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
+  LiveStreamCore: 5c330acc2909b03041feaff525a45c364890457a
+  Protobuf: bcec8c9430002f8d11c8a08f964b3ebcdd060536
+  RTCCommon: cfd30f124519be2473f8b08d7d77dd1cde778a80
+  RTCRoomEngine: 8bb1974efbb15fcad63042db42fba35a1683f446
+  SDWebImage: 73c6079366fea25fa4bb9640d5fb58f0893facd8
+  SeatGridView: ff9f13a21448f47f375449167be778501218b085
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+  SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
+  SVGAPlayer: 318b85a78b61292d6ae9dfcd651f3f0d1cdadd86
+  TUICore: 798f1db24c5e3ada1db90431904a3f63ff612061
+  TUILiveKit: 886e35ae106be15bd225173fe4f76924cd3a9504
+  TXIMSDK_Plus_iOS_XCFramework: ce4435718ef7d893ed5c0c9cb7ddb81253db9f4c
+  TXLiteAVSDK_Professional: 6e8fa18eeb0e52e6bbbcd97bab9ec9fbdc828df3
+
+PODFILE CHECKSUM: 4e1d68fc72ffba561c0febe54a847b9d056e8402
+
+COCOAPODS: 1.16.2
