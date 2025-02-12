@@ -8,6 +8,19 @@ require Pod::Executable.execute_command('node', ['-p',
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
 
+# Add this to handle architecture issues
+def __apply_Xcode_14_3_RC_post_install_workaround(installer)
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      current_target = config.build_settings['IPHONEOS_DEPLOYMENT_TARGET']
+      minimum_target = min_ios_version_supported
+      if current_target.to_f < minimum_target.to_f
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = minimum_target
+      end
+    end
+  end
+end
+
 linkage = ENV['USE_FRAMEWORKS']
 if linkage != nil
   Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
@@ -19,9 +32,10 @@ use_modular_headers!
 target 'demoLivestreamApp' do
   config = use_native_modules!
 
-  pod 'TUILiveKit'
-  pod 'SVGAPlayer'
-  pod 'Protobuf'
+  pod 'TUILiveKit', :modular_headers => true
+  pod 'SVGAPlayer', :modular_headers => true
+  pod 'Protobuf', :modular_headers => true
+  pod 'SnapKit', :modular_headers => true, :inhibit_warnings => true
 
   use_react_native!(
     :path => config[:reactNativePath],
@@ -30,12 +44,38 @@ target 'demoLivestreamApp' do
   )
 
   post_install do |installer|
-    # https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+        config.build_settings['ENABLE_BITCODE'] = 'NO'
+        
+        # Add these lines to handle architecture issues
+        config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = ''
+        config.build_settings["EXCLUDED_ARCHS"] = ''
+        config.build_settings['ONLY_ACTIVE_ARCH'] = 'NO'
+        
+        # Fix module verification issues
+        config.build_settings['DEFINES_MODULE'] = 'YES'
+        config.build_settings['CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES'] = 'YES'
+        config.build_settings['CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER'] = 'NO'
+        
+        # Additional settings for better compatibility
+        config.build_settings['SWIFT_VERSION'] = '5.0'
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = min_ios_version_supported
+        
+        if config.build_settings['WRAPPER_EXTENSION'] == 'bundle'
+          config.build_settings['DEVELOPMENT_TEAM'] = 'YOUR_TEAM_ID'
+        end
+      end
+    end
+
     react_native_post_install(
       installer,
       config[:reactNativePath],
       :mac_catalyst_enabled => false,
-      # :ccache_enabled => true
     )
+    
+    # Apply the workaround
+    __apply_Xcode_14_3_RC_post_install_workaround(installer)
   end
 end
