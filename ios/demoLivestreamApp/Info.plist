@@ -48,5 +48,16 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>Camera access is required for live streaming</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Microphone access is required for live streaming</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Photo library access is required for live streaming</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>voip</string>
+	</array>
 </dict>
 </plist>
