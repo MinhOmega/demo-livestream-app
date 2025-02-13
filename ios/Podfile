@@ -1,3 +1,7 @@
+# Add this at the top of your Podfile
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
 # Resolve react_native_pods.rb with node to allow for hoisting
 require Pod::Executable.execute_command('node', ['-p',
   'require.resolve(
@@ -16,11 +20,9 @@ end
 
 target 'demoLivestreamApp' do
   config = use_native_modules!
-  pod 'RTCRoomEngine'
   use_react_native!(
     :path => config[:reactNativePath],
-    # An absolute path to your application root.
-    :app_path => "#{Pod::Config.instance.installation_root}/.."
+    :hermes_enabled => true
   )
 
   post_install do |installer|
@@ -32,4 +34,6 @@ target 'demoLivestreamApp' do
       # :ccache_enabled => true
     )
   end
+
+  # Add any additional pods here
 end
